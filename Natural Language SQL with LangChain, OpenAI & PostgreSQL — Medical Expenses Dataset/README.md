@@ -33,3 +33,4 @@ Fields:
 
 ### Step 1: Create you table in your **LOCAL** PostgreSQL Database - using SQL
 
+![Step1](Images/1.png)
