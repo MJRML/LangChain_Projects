@@ -31,6 +31,43 @@ Fields:
 - region
 - charges
 
-### Step 1: Create you table in your **LOCAL** PostgreSQL Database - using SQL
+## Step-by-Step Workflow
 
+
+### Step 1: Load Medical Expense Data
+- Load insurance.csv into a Pandas DataFrame.
+- Columns include: age, sex, bmi, children, smoker, region, and charges.
+
+### Step 2: Store Data in PostgreSQL
+- Use SQLAlchemy to connect to your local PostgreSQL database.
+- Create a table (medical_expenses) and populate it with the CSV data.  
 ![Step1](Images/1.png)
+
+### Step 3: Configure Your Environment
+- Use .env to securely store:
+- Configure OpenAI API Key
+- Configure PostgreSQL connection URL
+- Use python-dotenv to load these variables in your notebook.
+
+### Step 4: Connect LangChain to PostgreSQL
+- Set up SQLDatabase object with your PostgreSQL URI.
+- Use LangChain's SQLDatabaseChain to combine your database with OpenAI GPT.
+
+### Step 5: Ask Questions in Plain English
+- Ask question's about the dataset **(shown in Notebook)**  
+-The chain:
+- Translates your question to SQL,
+- Queries the PostgreSQL DB,
+- Returns the answer in plain language.
+
+### Step 6: Interpret Results in Notebook
+-LangChain logs:
+- The original question
+- The generated SQL query
+- The result and explanation
+
+### Updated Step-by-Step Workflow (with Interactive Loop)
+- Prompts the user to ask a question
+- Exits when user types 'exit'
+- Sends the question to LangChain + GPT for translation and execution
+- Prints the natural language answer
