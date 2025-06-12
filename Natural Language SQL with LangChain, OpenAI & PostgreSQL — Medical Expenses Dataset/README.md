@@ -2,8 +2,8 @@
 
 ## Project Overview
 
-This project enables natural language querying over a structured dataset (medical insurance expenses) by leveraging LangChain, OpenAI, and a local PostgreSQL database. Instead of writing SQL manually, users can ask questions like:
-- “What is the average charge for smokers?”
+This project enables natural language querying over a structured dataset (medical insurance expenses) by leveraging LangChain, OpenAI, and a local PostgreSQL database. Instead of writing SQL manually, users can ask questions like:  
+- “what region has the highest average charges?”
 
 LangChain translates the question to SQL, queries the PostgreSQL database, and returns the result — all from a Jupyter Notebook interface. No backend web server (like FastAPI) is needed for this version.
 This is perfect for showcasing how LLMs can bridge the gap between data science and end users in real-world analytics workflows.  
